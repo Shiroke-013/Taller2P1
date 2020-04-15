@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from temphum import views as temphum_views 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', temphum_views.temphum, name='temphum'),
 ]
