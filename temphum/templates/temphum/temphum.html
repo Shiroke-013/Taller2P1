@@ -2,12 +2,15 @@
 {% block content %}
 <div class="container">
     <form method="get">
-        <input type="number" name="value">
+      <input type="number" name="value">
+      <input type="number" name="latitude">
+      <input type="number" name="length">
+      <input type="text" name="land">
         <button type="submit">Adicionar</button>
     </form>
     {% for temphum in temphum %}
     <ul class="list-group">
-        <li class="list-group-item">{{temphum.type}} = {{temphum.value}}</li>
+        <li class="list-group-item">{{temphum.type}} = {{temphum.value}},      Latitud = {{temphum.latitude}},      Longitud = {{temphum.length}},      Tipo de Terreno = {{temphum.land}}</li>
     </ul>
     {% endfor %}
 </div>

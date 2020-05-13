@@ -7,10 +7,13 @@ def temphum(request):
     # Verifica si hay un parámetro value en la petición GET
     if 'value' in request.GET:
         value = request.GET['value']
+        latitude = request.GET['latitude']
+        length = request.GET['length']
+        land = request.GET['land']
         # Verifica si el value no esta vacio
         if value:
             # Crea el json para realizar la petición POST al Web Service
-            args = {'type': 'humidity', 'value': value}
+            args = {'type': 'humidity', 'value': value, 'latitude' : latitude, 'length':length, 'land':land}
             response = requests.post('http://127.0.0.1:8000/temphum/', args)
             # Convierte la respuesta en JSON
             temphum_json = response.json()
